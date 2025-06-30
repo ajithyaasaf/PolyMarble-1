@@ -99,7 +99,16 @@ This is a full-stack web application for Woodcove Flooring, a premium hardwood f
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+- June 30, 2025: Initial setup completed
+- June 30, 2025: Successfully migrated from Figma to Replit environment  
+- June 30, 2025: Replaced entire Home.tsx component with complete hero section from Figma design
+- June 30, 2025: Updated navigation bar with proper search functionality and shopping cart
+- June 30, 2025: Implemented full-width hero section with carousel navigation and indicators
+
 ## Changelog
 
 Changelog:
 - June 30, 2025. Initial setup
+- June 30, 2025. Hero section migration from Figma completed
