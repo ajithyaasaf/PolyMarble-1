@@ -27,7 +27,7 @@ export const TeamSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col sm:flex-row flex-wrap lg:flex-nowrap items-center justify-center gap-4 sm:gap-5 w-full py-8 sm:py-12 px-4 sm:px-6">
+    <section className="flex flex-col sm:flex-row flex-wrap lg:flex-nowrap items-center justify-center gap-4 sm:gap-5 w-full py-8 sm:py-12 px-4 sm:px-6 md:px-12 lg:px-[100px] xl:px-[120px] 2xl:px-[200px]">
       {teamMembers.map((member, index) => (
         <Card
           key={index}

@@ -27,8 +27,8 @@ export const ContactSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-between p-4 sm:p-6 md:p-8 lg:p-12 bg-[#e5eef2]">
-      <div className="flex flex-col lg:flex-row w-full max-w-[1240px] gap-6 sm:gap-8 items-center justify-between">
+    <section className="flex flex-col items-center justify-between py-8 sm:py-12 md:py-16 lg:py-20 bg-[#e5eef2] w-full">
+      <div className="flex flex-col lg:flex-row w-full gap-6 sm:gap-8 items-center justify-between max-w-none px-4 sm:px-6 md:px-12 lg:px-[100px] xl:px-[120px] 2xl:px-[200px]">
         <div className="flex flex-col w-full lg:w-[505px] items-start justify-center gap-4 sm:gap-5 text-center lg:text-left">
           <h2 className="font-bold text-app-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-['Roboto',Helvetica]">
             Explore Our Hardwood Collections

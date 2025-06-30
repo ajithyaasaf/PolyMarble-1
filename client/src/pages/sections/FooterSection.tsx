@@ -18,7 +18,7 @@ export const FooterSection = (): JSX.Element => {
     <footer className="w-full">
       {/* Top section with logo and search */}
       <div className="w-full bg-white py-4">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-4 md:gap-0">
+        <div className="w-full flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-[100px] xl:px-[120px] 2xl:px-[200px] gap-4 md:gap-0">
           {/* Mobile: Logo first */}
           <div className="order-1 md:order-2 flex justify-center">
             <img
@@ -62,7 +62,7 @@ export const FooterSection = (): JSX.Element => {
 
       {/* Bottom navigation bar */}
       <nav className="w-full bg-app-primary border-b border-[#195c75]">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-3 md:py-0 md:h-[60px] gap-4 md:gap-0">
+        <div className="w-full flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-[100px] xl:px-[120px] 2xl:px-[200px] py-3 md:py-0 md:h-[60px] gap-4 md:gap-0">
           {/* Navigation links */}
           <ul className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 md:gap-[25px]">
             {navItems.map((item, index) => (

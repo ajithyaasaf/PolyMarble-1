@@ -38,11 +38,11 @@ export const Home = (): JSX.Element => {
   ];
 
   return (
-    <div className="bg-white flex flex-row justify-center w-full">
-      <div className="bg-white w-full max-w-[1440px] relative">
+    <div className="bg-white w-full">
+      <div className="bg-white w-full relative">
         {/* Top info bar */}
         <header className="w-full h-auto min-h-[60px] bg-neutral-100">
-          <div className="max-w-[1440px] h-full mx-auto px-4 sm:px-6 md:px-12 lg:px-[100px] flex flex-col sm:flex-row justify-between items-center py-2 sm:py-0 gap-2 sm:gap-0">
+          <div className="w-full h-full px-4 sm:px-6 md:px-12 lg:px-[100px] xl:px-[120px] 2xl:px-[200px] flex flex-col sm:flex-row justify-between items-center py-2 sm:py-0 gap-2 sm:gap-0">
             <div className="font-normal text-app-primary text-sm sm:text-base text-center sm:text-left">
               Up to 50% Off Waterproof Floors
             </div>
@@ -67,7 +67,7 @@ export const Home = (): JSX.Element => {
         <nav className="w-full h-auto min-h-[168px]">
           {/* Upper nav with logo and search */}
           <div className="w-full h-auto min-h-[108px] bg-white py-4 md:py-0">
-            <div className="max-w-[1440px] h-full mx-auto px-4 sm:px-6 md:px-12 lg:px-[100px] flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+            <div className="w-full h-full px-4 sm:px-6 md:px-12 lg:px-[100px] xl:px-[120px] 2xl:px-[200px] flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
               {/* Mobile: Logo first */}
               <div className="order-1 md:order-2">
                 <img
@@ -109,7 +109,7 @@ export const Home = (): JSX.Element => {
 
           {/* Lower nav with menu items */}
           <div className="w-full h-auto min-h-[60px] bg-app-primary border-b border-[#195c75]">
-            <div className="max-w-[1440px] h-full mx-auto px-4 sm:px-6 md:px-12 lg:px-[100px] flex flex-col md:flex-row justify-between items-center py-3 md:py-0 gap-4 md:gap-0">
+            <div className="w-full h-full px-4 sm:px-6 md:px-12 lg:px-[100px] xl:px-[120px] 2xl:px-[200px] flex flex-col md:flex-row justify-between items-center py-3 md:py-0 gap-4 md:gap-0">
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 md:gap-[25px]">
                 {navItems.map((item, index) => (
                   <div
@@ -145,7 +145,7 @@ export const Home = (): JSX.Element => {
           className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] xl:h-[700px] bg-cover bg-center relative"
           style={{ backgroundImage: "url(/figmaAssets/image-3.png)" }}
         >
-          <div className="absolute w-full max-w-[1240px] h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 sm:px-6 md:px-8 lg:px-12">
+          <div className="absolute w-full h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[120px] 2xl:px-[200px]">
             {/* Hero content */}
             <div className="flex flex-col w-full max-w-[792px] items-center gap-3 sm:gap-4 md:gap-5 mx-auto">
               <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[1.1] xl:leading-[66px] px-2">

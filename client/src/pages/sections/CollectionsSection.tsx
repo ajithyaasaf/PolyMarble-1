@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export const CollectionsSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col lg:flex-row items-center justify-between w-full py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-12 lg:px-[100px] bg-white gap-8 lg:gap-0">
+    <section className="flex flex-col lg:flex-row items-center justify-between w-full py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-12 lg:px-[100px] xl:px-[120px] 2xl:px-[200px] bg-white gap-8 lg:gap-0">
       <div className="relative w-full max-w-[663px] order-2 lg:order-1">
         <div className="relative h-[300px] sm:h-[400px] md:h-[534px]">
           <img
