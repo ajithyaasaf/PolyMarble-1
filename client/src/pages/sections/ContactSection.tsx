@@ -15,78 +15,126 @@ export const ContactSection = (): JSX.Element => {
     {
       id: 1,
       title: "Karndean Korlok Select Texas White Ash Luxury Vinyl Plank",
-      price: "$5.4",
+      price: "$5.40",
+      originalPrice: "$7.20",
       image: "/figmaAssets/rectangle-8.png",
+      badge: "Best Seller"
     },
     {
       id: 2,
       title: "Mohawk RevWood Select Rare Vintage CDL74 Laminate Plank",
-      price: "$7.2",
+      price: "$7.20",
       image: "/figmaAssets/rectangle-8-1.png",
+      badge: "Premium"
     },
   ];
 
   return (
-    <section className="flex flex-col items-center justify-between py-8 sm:py-12 md:py-16 lg:py-20 bg-[#e5eef2] w-full">
-      <div className="flex flex-col lg:flex-row w-full gap-6 sm:gap-8 items-center justify-between max-w-none px-4 sm:px-6 md:px-12 lg:px-[100px] xl:px-[120px] 2xl:px-[200px]">
-        <div className="flex flex-col w-full lg:w-[505px] items-start justify-center gap-4 sm:gap-5 text-center lg:text-left">
-          <h2 className="font-bold text-app-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-['Roboto',Helvetica]">
-            Explore Our Hardwood Collections
-          </h2>
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-[#e5eef2] to-[#f0f7fa] w-full">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16">
+          
+          {/* Content Section */}
+          <div className="w-full lg:w-1/2 space-y-6">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-app-primary text-sm font-medium uppercase tracking-wider">
+                <span className="w-8 h-0.5 bg-app-primary"></span>
+                Featured Products
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-app-primary leading-tight">
+                Explore Our Hardwood Collections
+              </h2>
+              <p className="text-[#50646c] text-lg sm:text-xl leading-relaxed">
+                Browse our wide selection of high-quality hardwood flooring options.
+                From classic to contemporary, Woodcove Flooring offers a variety of
+                styles, colors, and finishes to suit any décor.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button className="bg-app-primary hover:bg-app-primary/90 text-white h-12 px-8 text-lg transition-all duration-300">
+                View All Products
+              </Button>
+              <Button variant="outline" className="border-app-primary text-app-primary hover:bg-app-primary hover:text-white h-12 px-8 text-lg transition-all duration-300">
+                Request Samples
+              </Button>
+            </div>
+          </div>
 
-          <p className="text-[#50646c] text-base sm:text-lg font-['Roboto',Helvetica] leading-relaxed">
-            Browse our wide selection of high-quality hardwood flooring options.
-            From classic to contemporary, Woodcove Flooring offers a variety of
-            styles, colors, and finishes to suit any décor. Find the perfect
-            floor for your space today
-          </p>
-        </div>
+          {/* Products Carousel Section */}
+          <div className="w-full lg:w-1/2">
+            <Carousel className="w-full">
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {products.map((product) => (
+                  <CarouselItem key={product.id} className="pl-2 md:pl-4 md:basis-1/2">
+                    <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                      <CardContent className="p-0 relative">
+                        {/* Product Badge */}
+                        {product.badge && (
+                          <div className="absolute top-4 left-4 z-10 bg-app-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                            {product.badge}
+                          </div>
+                        )}
+                        
+                        {/* Product Image */}
+                        <div className="relative overflow-hidden">
+                          <img
+                            className="w-full h-56 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                            alt={product.title}
+                            src={product.image}
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        </div>
+                        
+                        {/* Product Info */}
+                        <div className="p-6 space-y-4">
+                          <h3 className="font-bold text-app-primary text-lg leading-tight line-clamp-2">
+                            {product.title}
+                          </h3>
+                          
+                          <div className="flex justify-between items-center">
+                            <div className="flex items-center gap-2">
+                              <span className="text-2xl font-bold text-app-primary">
+                                {product.price}
+                              </span>
+                              {product.originalPrice && (
+                                <span className="text-lg text-gray-500 line-through">
+                                  {product.originalPrice}
+                                </span>
+                              )}
+                            </div>
+                            <Button 
+                              size="sm" 
+                              className="bg-app-primary hover:bg-app-primary/90 text-white px-6 transition-all duration-300 transform hover:scale-105"
+                            >
+                              Add to Cart
+                            </Button>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              
+              {/* Improved Carousel Controls */}
+              <CarouselPrevious className="left-0 -translate-x-12 bg-white border-2 border-app-primary text-app-primary hover:bg-app-primary hover:text-white w-12 h-12 transition-all duration-300" />
+              <CarouselNext className="right-0 translate-x-12 bg-white border-2 border-app-primary text-app-primary hover:bg-app-primary hover:text-white w-12 h-12 transition-all duration-300" />
+            </Carousel>
 
-        <div className="w-full lg:w-[702px]">
-          <Carousel className="w-full">
-            <CarouselContent>
-              {products.map((product) => (
-                <CarouselItem key={product.id} className="md:basis-1/2">
-                  <Card className="w-full max-w-[296px] h-[300px] sm:h-[320px] md:h-[342px] border border-solid border-[#e4e4e4] bg-white mx-auto">
-                    <CardContent className="p-0 relative h-full">
-                      <img
-                        className="w-[calc(100%-20px)] max-w-[276px] h-[180px] sm:h-[190px] md:h-[200px] mx-auto mt-[9px] object-cover"
-                        alt={product.title}
-                        src={product.image}
-                      />
-                      <div className="px-3.5 mt-4">
-                        <h3 className="font-bold text-app-primary text-base font-['Roboto',Helvetica]">
-                          {product.title}
-                        </h3>
-                      </div>
-                      <div className="absolute bottom-0 left-0 w-full flex justify-between items-center px-3.5 pb-[9px]">
-                        <Button className="bg-app-primary text-white font-medium text-base font-['Roboto',Helvetica] px-5 py-2.5">
-                          Add to cart
-                        </Button>
-                        <span className="font-normal text-[#727272] text-lg font-['Roboto',Helvetica]">
-                          {product.price}
-                        </span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
+            {/* Carousel Indicators */}
+            <div className="flex justify-center mt-6 gap-2">
+              {products.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === 0
+                      ? "bg-app-primary scale-125"
+                      : "bg-app-primary/30 hover:bg-app-primary/60"
+                  }`}
+                />
               ))}
-            </CarouselContent>
-            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#ffffffcc] border-2 border-solid border-white rounded-[5px] w-10 h-10" />
-            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#ffffffcc] border-2 border-solid border-white rounded-[5px] w-10 h-10" />
-          </Carousel>
-
-          <div className="flex justify-center mt-4 gap-[23px]">
-            {[1, 2, 3, 4].map((_, index) => (
-              <div
-                key={index}
-                className={`w-[13px] h-[13px] rounded-[6.5px] ${
-                  index === 1
-                    ? "bg-app-primary"
-                    : "border border-solid border-[#083343]"
-                }`}
-              />
-            ))}
+            </div>
           </div>
         </div>
       </div>

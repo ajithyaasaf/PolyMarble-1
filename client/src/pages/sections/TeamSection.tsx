@@ -8,51 +8,72 @@ export const TeamSection = (): JSX.Element => {
       name: "John Smith",
       role: "Founder & CEO",
       image: "/figmaAssets/rectangle-13.png",
+      bio: "15+ years experience in flooring industry"
     },
     {
       name: "Jane Doe",
       role: "Lead Designer",
       image: "/figmaAssets/rectangle-14.png",
+      bio: "Expert in interior design and space planning"
     },
     {
       name: "Mike Johnson",
       role: "Installation Manager",
       image: "/figmaAssets/rectangle-15.png",
+      bio: "Certified installer with precision craftsmanship"
     },
     {
       name: "Emily Brown",
       role: "Customer Relations Specialist",
       image: "/figmaAssets/rectangle-16.png",
+      bio: "Dedicated to excellent customer service"
     },
   ];
 
   return (
-    <section className="flex flex-col sm:flex-row flex-wrap lg:flex-nowrap items-center justify-center gap-4 sm:gap-5 w-full py-8 sm:py-12 px-4 sm:px-6 md:px-12 lg:px-[100px] xl:px-[120px] 2xl:px-[200px]">
-      {teamMembers.map((member, index) => (
-        <Card
-          key={index}
-          className="w-full max-w-[280px] sm:w-[280px] md:w-[295px] h-auto border-none rounded-none shadow-none"
-        >
-          <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px]">
-            <img
-              className="w-full h-full object-cover"
-              alt={`${member.name} photo`}
-              src={member.image}
-            />
-          </div>
+    <section className="py-16 sm:py-20 md:py-24 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {teamMembers.map((member, index) => (
+            <Card
+              key={index}
+              className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white"
+            >
+              {/* Image Container */}
+              <div className="relative overflow-hidden">
+                <img
+                  className="w-full h-64 sm:h-72 lg:h-80 object-cover transition-transform duration-300 group-hover:scale-110"
+                  alt={`${member.name} photo`}
+                  src={member.image}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
 
-          <CardContent className="flex flex-col items-center justify-center h-auto min-h-[100px] sm:min-h-[129px] p-0 bg-neutral-50 border border-solid border-[#e7e7e7]">
-            <div className="flex flex-col items-center gap-2 sm:gap-2.5 py-4 sm:py-[25px] px-4 sm:px-8 md:px-[69px] w-full">
-              <h3 className="text-app-primary font-bold text-lg sm:text-xl text-center tracking-[0] leading-normal [font-family:'Roboto',Helvetica] w-full">
-                {member.name}
-              </h3>
-              <p className="font-normal text-[#50646c] text-base sm:text-lg text-center tracking-[0] leading-normal [font-family:'Roboto',Helvetica] w-full whitespace-normal">
-                {member.role}
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
+              {/* Content */}
+              <CardContent className="p-6 text-center space-y-3">
+                <h3 className="text-app-primary font-bold text-xl leading-tight">
+                  {member.name}
+                </h3>
+                <p className="text-app-primary/70 font-medium text-sm uppercase tracking-wider">
+                  {member.role}
+                </p>
+                <p className="text-[#50646c] text-sm leading-relaxed">
+                  {member.bio}
+                </p>
+                
+                {/* Optional: Social links or contact info could go here */}
+                <div className="pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex justify-center space-x-3">
+                    <div className="w-8 h-8 bg-app-primary/10 rounded-full flex items-center justify-center hover:bg-app-primary hover:text-white transition-colors duration-200 cursor-pointer">
+                      <span className="text-xs">@</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

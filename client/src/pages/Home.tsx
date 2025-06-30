@@ -26,35 +26,43 @@ export const Home = (): JSX.Element => {
     <Layout>
       {/* Hero section */}
       <section
-        className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] xl:h-[700px] bg-cover bg-center relative"
+        className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[90vh] bg-cover bg-center relative overflow-hidden"
         style={{ backgroundImage: "url(/figmaAssets/image-3.png)" }}
       >
-        <div className="absolute w-full h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[120px] 2xl:px-[200px]">
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/20"></div>
+        
+        <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[120px] 2xl:px-[200px]">
           {/* Hero content */}
-          <div className="flex flex-col w-full max-w-[792px] items-center gap-3 sm:gap-4 md:gap-5 mx-auto">
-            <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[1.1] xl:leading-[66px] px-2">
+          <div className="flex flex-col w-full max-w-4xl items-center gap-4 sm:gap-6 md:gap-8 text-center z-10">
+            <h1 className="font-bold text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl leading-tight max-w-5xl">
               Premium Hardwood Floors by Woodcove Flooring
             </h1>
-            <p className="w-full max-w-[621px] font-normal text-[#ffffffcc] text-sm sm:text-base md:text-lg text-center px-4">
+            <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl">
               Discover the elegance and durability of our premium hardwood
               flooring. At Woodcove Flooring, we provide top-quality materials
               and expert craftsmanship to enhance your home or business.
             </p>
-            <Button className="bg-white text-app-primary font-medium text-sm sm:text-base h-[40px] sm:h-[45px] px-4 sm:px-5 py-2 sm:py-2.5 flex items-center gap-0.5 mt-2">
-              Contact us
-              <ArrowUpRightIcon className="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] md:w-[26.27px] md:h-[26.27px]" />
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 mt-4">
+              <Button className="bg-white text-app-primary hover:bg-gray-100 font-medium text-base h-12 px-8 flex items-center gap-2 transition-all duration-300 transform hover:scale-105">
+                Get Quote
+                <ArrowUpRightIcon className="w-5 h-5" />
+              </Button>
+              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-app-primary font-medium text-base h-12 px-8 transition-all duration-300">
+                View Gallery
+              </Button>
+            </div>
           </div>
 
-          {/* Carousel navigation */}
-          <div className="absolute w-full max-w-[calc(100%-2rem)] sm:max-w-[calc(100%-4rem)] md:max-w-full flex justify-between items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+          {/* Carousel navigation - improved positioning */}
+          <div className="absolute inset-y-0 left-4 right-4 flex justify-between items-center pointer-events-none">
             <Button
               variant="outline"
               size="icon"
-              className="w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] md:w-[46px] md:h-[46px] rounded-full bg-[#08334380] border-[#ffffff33] rotate-180"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 pointer-events-auto transition-all duration-300"
             >
               <img
-                className="-rotate-180 w-[10px] h-[20px] sm:w-[12px] sm:h-[26px] md:w-[13px] md:h-[30px]"
+                className="w-3 h-5 sm:w-4 sm:h-6 rotate-180"
                 alt="Previous slide"
                 src="/figmaAssets/formkit-right-1.svg"
               />
@@ -62,10 +70,10 @@ export const Home = (): JSX.Element => {
             <Button
               variant="outline"
               size="icon"
-              className="w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] md:w-[46px] md:h-[46px] rounded-full bg-[#08334380] border-[#ffffff33]"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 pointer-events-auto transition-all duration-300"
             >
               <img
-                className="w-[10px] h-[20px] sm:w-[12px] sm:h-[26px] md:w-[13px] md:h-[30px]"
+                className="w-3 h-5 sm:w-4 sm:h-6"
                 alt="Next slide"
                 src="/figmaAssets/formkit-right.svg"
               />
@@ -73,13 +81,15 @@ export const Home = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Carousel indicators */}
-        <div className="absolute bottom-[20px] sm:bottom-[30px] md:bottom-[37px] left-1/2 -translate-x-1/2 flex gap-[8px] sm:gap-[10px]">
+        {/* Carousel indicators - improved positioning */}
+        <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
           {indicators.map((indicator, index) => (
-            <div
+            <button
               key={`indicator-${index}`}
-              className={`w-[10px] h-[10px] sm:w-[12px] sm:h-[12px] md:w-[13px] md:h-[13px] rounded-full ${
-                indicator.active ? "bg-white" : "border border-white"
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                indicator.active 
+                  ? "bg-white scale-125" 
+                  : "bg-white/50 hover:bg-white/75"
               }`}
             />
           ))}
@@ -98,33 +108,54 @@ export const Home = (): JSX.Element => {
       {/* Team Section */}
       <TeamSection />
 
-      {/* Testimonials background section */}
-      <section className="w-full h-auto min-h-[500px] sm:min-h-[600px] md:min-h-[700px] bg-[url(/figmaAssets/rectangle-17.png)] bg-cover bg-center relative">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 h-full flex flex-col items-center py-8 sm:py-12 md:py-16 lg:py-20">
-          <div className="flex flex-col items-center gap-3 sm:gap-4 md:gap-5 mt-4 sm:mt-8 md:mt-12 lg:mt-[90px]">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white text-center px-4">
+      {/* Testimonials Section */}
+      <section 
+        className="relative py-20 sm:py-24 md:py-28 lg:py-32 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: "url(/figmaAssets/rectangle-17.png)" }}
+      >
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+          <div className="text-center space-y-8 mb-16">
+            {/* Section Label */}
+            <div className="flex items-center justify-center gap-3">
+              <span className="w-12 h-0.5 bg-white"></span>
+              <span className="text-white text-sm font-medium uppercase tracking-wider">
+                Testimonials
+              </span>
+              <span className="w-12 h-0.5 bg-white"></span>
+            </div>
+            
+            {/* Main Heading */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
               <span className="font-normal">What </span>
               <span className="font-bold">Our Customers</span>
               <span className="font-normal"> Say</span>
             </h2>
 
-            <p className="max-w-[534px] w-full text-center text-white text-sm sm:text-base md:text-lg px-4">
-              Don&apos;t just take our word for it. Hear from our satisfied
+            {/* Description */}
+            <p className="max-w-3xl mx-auto text-white/90 text-lg sm:text-xl leading-relaxed">
+              Don't just take our word for it. Hear from our satisfied
               customers who have transformed their spaces with Woodcove
-              Flooring.
+              Flooring's premium hardwood solutions.
             </p>
           </div>
 
-          {/* Services Section */}
-          <ServicesSection />
+          {/* Testimonials */}
+          <div className="mb-12">
+            <ServicesSection />
+          </div>
 
-          {/* Pagination dots */}
-          <div className="flex justify-center gap-[8px] sm:gap-[10px] mt-auto mb-8 sm:mb-12 md:mb-16 lg:mb-[120px]">
+          {/* Testimonial Navigation */}
+          <div className="flex justify-center gap-3">
             {indicators.map((dot, index) => (
-              <div
+              <button
                 key={`testimonial-dot-${index}`}
-                className={`w-[10px] h-[10px] sm:w-[12px] sm:h-[12px] md:w-[13px] md:h-[13px] rounded-full ${
-                  dot.active ? "bg-white" : "border border-white"
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  dot.active 
+                    ? "bg-white scale-125" 
+                    : "bg-white/50 hover:bg-white/75"
                 }`}
               />
             ))}
