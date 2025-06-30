@@ -54,29 +54,21 @@ export const Home = (): JSX.Element => {
             </div>
           </div>
 
-          {/* Carousel navigation - improved positioning */}
+          {/* Modern Carousel Navigation */}
           <div className="absolute inset-y-0 left-4 right-4 flex justify-between items-center pointer-events-none">
             <Button
-              variant="outline"
+              variant="ghost"
               size="icon"
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 pointer-events-auto transition-all duration-300"
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-md border-0 text-white hover:bg-white/20 hover:scale-110 pointer-events-auto transition-all duration-300 shadow-lg"
             >
-              <img
-                className="w-3 h-5 sm:w-4 sm:h-6 rotate-180"
-                alt="Previous slide"
-                src="/figmaAssets/formkit-right-1.svg"
-              />
+              <span className="text-xl sm:text-2xl font-light">‹</span>
             </Button>
             <Button
-              variant="outline"
+              variant="ghost"
               size="icon"
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 pointer-events-auto transition-all duration-300"
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-md border-0 text-white hover:bg-white/20 hover:scale-110 pointer-events-auto transition-all duration-300 shadow-lg"
             >
-              <img
-                className="w-3 h-5 sm:w-4 sm:h-6"
-                alt="Next slide"
-                src="/figmaAssets/formkit-right.svg"
-              />
+              <span className="text-xl sm:text-2xl font-light">›</span>
             </Button>
           </div>
         </div>

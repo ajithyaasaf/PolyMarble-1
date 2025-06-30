@@ -118,9 +118,9 @@ export const ContactSection = (): JSX.Element => {
                   ))}
                 </CarouselContent>
                 
-                {/* Mobile-first Carousel Controls - Hidden on small screens, visible on larger */}
-                <CarouselPrevious className="hidden md:flex left-0 bg-white border-2 border-app-primary text-app-primary hover:bg-app-primary hover:text-white w-10 h-10 lg:w-12 lg:h-12 transition-all duration-300" />
-                <CarouselNext className="hidden md:flex right-0 bg-white border-2 border-app-primary text-app-primary hover:bg-app-primary hover:text-white w-10 h-10 lg:w-12 lg:h-12 transition-all duration-300" />
+                {/* Modern Carousel Controls - Hidden on small screens, visible on larger */}
+                <CarouselPrevious className="hidden md:flex left-2 bg-white/90 backdrop-blur-sm border-0 text-app-primary hover:bg-app-primary hover:text-white w-12 h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110" />
+                <CarouselNext className="hidden md:flex right-2 bg-white/90 backdrop-blur-sm border-0 text-app-primary hover:bg-app-primary hover:text-white w-12 h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110" />
               </Carousel>
             </div>
 
@@ -138,21 +138,21 @@ export const ContactSection = (): JSX.Element => {
               ))}
             </div>
 
-            {/* Mobile Navigation Buttons */}
-            <div className="flex justify-center gap-4 mt-4 md:hidden">
+            {/* Modern Mobile Navigation */}
+            <div className="flex justify-center gap-3 mt-6 md:hidden">
               <Button
-                variant="outline"
+                variant="ghost"
                 size="sm"
-                className="border-app-primary text-app-primary hover:bg-app-primary hover:text-white px-6"
+                className="bg-white/80 backdrop-blur-sm text-app-primary hover:bg-app-primary hover:text-white rounded-full w-12 h-12 p-0 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110"
               >
-                Previous
+                ←
               </Button>
               <Button
-                variant="outline"
+                variant="ghost"
                 size="sm"
-                className="border-app-primary text-app-primary hover:bg-app-primary hover:text-white px-6"
+                className="bg-white/80 backdrop-blur-sm text-app-primary hover:bg-app-primary hover:text-white rounded-full w-12 h-12 p-0 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110"
               >
-                Next
+                →
               </Button>
             </div>
           </div>
