@@ -63,66 +63,68 @@ export const ContactSection = (): JSX.Element => {
 
           {/* Products Carousel Section */}
           <div className="w-full lg:w-1/2">
-            <Carousel className="w-full">
-              <CarouselContent className="-ml-2 md:-ml-4">
-                {products.map((product) => (
-                  <CarouselItem key={product.id} className="pl-2 md:pl-4 md:basis-1/2">
-                    <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                      <CardContent className="p-0 relative">
-                        {/* Product Badge */}
-                        {product.badge && (
-                          <div className="absolute top-4 left-4 z-10 bg-app-primary text-white px-3 py-1 rounded-full text-sm font-medium">
-                            {product.badge}
-                          </div>
-                        )}
-                        
-                        {/* Product Image */}
-                        <div className="relative overflow-hidden">
-                          <img
-                            className="w-full h-56 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                            alt={product.title}
-                            src={product.image}
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-                        </div>
-                        
-                        {/* Product Info */}
-                        <div className="p-6 space-y-4">
-                          <h3 className="font-bold text-app-primary text-lg leading-tight line-clamp-2">
-                            {product.title}
-                          </h3>
-                          
-                          <div className="flex justify-between items-center">
-                            <div className="flex items-center gap-2">
-                              <span className="text-2xl font-bold text-app-primary">
-                                {product.price}
-                              </span>
-                              {product.originalPrice && (
-                                <span className="text-lg text-gray-500 line-through">
-                                  {product.originalPrice}
-                                </span>
-                              )}
+            <div className="relative px-4 md:px-8 lg:px-12">
+              <Carousel className="w-full">
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {products.map((product) => (
+                    <CarouselItem key={product.id} className="pl-2 md:pl-4 basis-full md:basis-1/2">
+                      <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                        <CardContent className="p-0 relative">
+                          {/* Product Badge */}
+                          {product.badge && (
+                            <div className="absolute top-4 left-4 z-10 bg-app-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                              {product.badge}
                             </div>
-                            <Button 
-                              size="sm" 
-                              className="bg-app-primary hover:bg-app-primary/90 text-white px-6 transition-all duration-300 transform hover:scale-105"
-                            >
-                              Add to Cart
-                            </Button>
+                          )}
+                          
+                          {/* Product Image */}
+                          <div className="relative overflow-hidden">
+                            <img
+                              className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                              alt={product.title}
+                              src={product.image}
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
                           </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              
-              {/* Improved Carousel Controls */}
-              <CarouselPrevious className="left-0 -translate-x-12 bg-white border-2 border-app-primary text-app-primary hover:bg-app-primary hover:text-white w-12 h-12 transition-all duration-300" />
-              <CarouselNext className="right-0 translate-x-12 bg-white border-2 border-app-primary text-app-primary hover:bg-app-primary hover:text-white w-12 h-12 transition-all duration-300" />
-            </Carousel>
+                          
+                          {/* Product Info */}
+                          <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                            <h3 className="font-bold text-app-primary text-base sm:text-lg leading-tight line-clamp-2">
+                              {product.title}
+                            </h3>
+                            
+                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+                              <div className="flex items-center gap-2">
+                                <span className="text-xl sm:text-2xl font-bold text-app-primary">
+                                  {product.price}
+                                </span>
+                                {product.originalPrice && (
+                                  <span className="text-base sm:text-lg text-gray-500 line-through">
+                                    {product.originalPrice}
+                                  </span>
+                                )}
+                              </div>
+                              <Button 
+                                size="sm" 
+                                className="bg-app-primary hover:bg-app-primary/90 text-white px-4 sm:px-6 text-sm sm:text-base transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+                              >
+                                Add to Cart
+                              </Button>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                
+                {/* Mobile-first Carousel Controls - Hidden on small screens, visible on larger */}
+                <CarouselPrevious className="hidden md:flex left-0 bg-white border-2 border-app-primary text-app-primary hover:bg-app-primary hover:text-white w-10 h-10 lg:w-12 lg:h-12 transition-all duration-300" />
+                <CarouselNext className="hidden md:flex right-0 bg-white border-2 border-app-primary text-app-primary hover:bg-app-primary hover:text-white w-10 h-10 lg:w-12 lg:h-12 transition-all duration-300" />
+              </Carousel>
+            </div>
 
-            {/* Carousel Indicators */}
+            {/* Carousel Indicators - Always visible for mobile navigation */}
             <div className="flex justify-center mt-6 gap-2">
               {products.map((_, index) => (
                 <button
@@ -134,6 +136,24 @@ export const ContactSection = (): JSX.Element => {
                   }`}
                 />
               ))}
+            </div>
+
+            {/* Mobile Navigation Buttons */}
+            <div className="flex justify-center gap-4 mt-4 md:hidden">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-app-primary text-app-primary hover:bg-app-primary hover:text-white px-6"
+              >
+                Previous
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-app-primary text-app-primary hover:bg-app-primary hover:text-white px-6"
+              >
+                Next
+              </Button>
             </div>
           </div>
         </div>
