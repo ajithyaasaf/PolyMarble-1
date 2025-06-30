@@ -17,11 +17,11 @@ export const AboutUsSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col md:flex-row gap-8 py-16 px-4 md:px-8 w-full">
+    <section className="flex flex-col md:flex-row gap-6 sm:gap-8 py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 w-full">
       <div className="flex flex-col w-full md:w-1/2">
-        <div className="mb-12 text-center md:text-left">
-          <p className="text-white font-normal mb-2">GET IN TOUCH</p>
-          <h2 className="text-white text-4xl md:text-[42px] font-medium tracking-wider leading-tight">
+        <div className="mb-8 sm:mb-10 md:mb-12 text-center md:text-left">
+          <p className="text-white font-normal mb-2 text-sm sm:text-base">GET IN TOUCH</p>
+          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-medium tracking-wider leading-tight">
             Needs Help? Let&apos;s Get in Touch
           </h2>
         </div>

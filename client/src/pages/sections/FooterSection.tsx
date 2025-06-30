@@ -18,32 +18,32 @@ export const FooterSection = (): JSX.Element => {
     <footer className="w-full">
       {/* Top section with logo and search */}
       <div className="w-full bg-white py-4">
-        <div className="container mx-auto flex items-center justify-between px-4">
-          {/* Search bar */}
-          <div className="relative w-[400px]">
-            <div className="absolute left-3.5 top-3">
-              <SearchIcon className="h-5 w-5 text-[#a2a2a2]" />
-            </div>
-            <Input
-              className="pl-11 h-[46px] border-[#e2e2e2] text-[#a2a2a2] font-['Roboto',Helvetica] text-base"
-              placeholder="Search for flooring, Hardwood, Vinyl ..."
-            />
-          </div>
-
-          {/* Logo */}
-          <div className="flex justify-center">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-4 md:gap-0">
+          {/* Mobile: Logo first */}
+          <div className="order-1 md:order-2 flex justify-center">
             <img
-              className="h-[78px] w-[84px]"
+              className="h-[60px] w-[65px] sm:h-[70px] sm:w-[75px] md:h-[78px] md:w-[84px]"
               alt="Logo"
               src="/figmaAssets/image-1-1.png"
             />
           </div>
 
+          {/* Search bar */}
+          <div className="order-2 md:order-1 relative w-full max-w-[400px] md:w-[400px]">
+            <div className="absolute left-3 sm:left-3.5 top-3">
+              <SearchIcon className="h-4 w-4 sm:h-5 sm:w-5 text-[#a2a2a2]" />
+            </div>
+            <Input
+              className="pl-10 sm:pl-11 h-[40px] sm:h-[46px] border-[#e2e2e2] text-[#a2a2a2] font-['Roboto',Helvetica] text-sm sm:text-base"
+              placeholder="Search for flooring..."
+            />
+          </div>
+
           {/* Cart */}
-          <div className="flex items-center gap-2">
+          <div className="order-3 md:order-3 flex items-center gap-2">
             <div className="relative">
               <img
-                className="w-7 h-7"
+                className="w-6 h-6 sm:w-7 sm:h-7"
                 alt="Cart icon"
                 src="/figmaAssets/mdi-cart-outline.svg"
               />

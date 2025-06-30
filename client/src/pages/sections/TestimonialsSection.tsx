@@ -30,21 +30,21 @@ export const TestimonialsSection = (): JSX.Element => {
   ];
 
   return (
-    <footer className="flex flex-row items-start gap-[61px] w-full py-8">
+    <footer className="flex flex-col md:flex-row items-start gap-6 sm:gap-8 md:gap-[61px] w-full py-6 sm:py-8 px-4 sm:px-6">
       {/* About Company Column */}
-      <div className="flex flex-col w-[359px]">
-        <h3 className="font-['Poppins',Helvetica] font-bold text-[#ffffff] text-[22px] text-center tracking-[0] leading-normal mb-11">
+      <div className="flex flex-col w-full md:w-[359px]">
+        <h3 className="font-['Poppins',Helvetica] font-bold text-[#ffffff] text-lg sm:text-xl md:text-[22px] text-center md:text-left tracking-[0] leading-normal mb-6 sm:mb-8 md:mb-11">
           ABOUT COMPANY
         </h3>
 
-        <p className="w-full font-['Poppins',Helvetica] text-[#727272] text-base tracking-[0.48px] font-normal leading-normal mb-8">
+        <p className="w-full font-['Poppins',Helvetica] text-[#727272] text-sm sm:text-base tracking-[0.48px] font-normal leading-normal mb-6 sm:mb-8 text-center md:text-left">
           Woodcove Flooring offers premium hardwood flooring solutions with a
           focus on quality and craftsmanship. Our expert team is dedicated to
           transforming your spaces with beautiful, durable floors. Experience
           the difference with Woodcove Flooring.
         </p>
 
-        <div className="flex gap-[10px]">
+        <div className="flex gap-[10px] justify-center md:justify-start">
           {socialLinks.map((social, index) => (
             <Button
               key={`social-${index}`}

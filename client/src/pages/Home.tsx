@@ -41,21 +41,21 @@ export const Home = (): JSX.Element => {
     <div className="bg-white flex flex-row justify-center w-full">
       <div className="bg-white w-full max-w-[1440px] relative">
         {/* Top info bar */}
-        <header className="w-full h-[60px] bg-neutral-100">
-          <div className="max-w-[1440px] h-full mx-auto px-[100px] flex justify-between items-center">
-            <div className="font-normal text-app-primary text-base">
+        <header className="w-full h-auto min-h-[60px] bg-neutral-100">
+          <div className="max-w-[1440px] h-full mx-auto px-4 sm:px-6 md:px-12 lg:px-[100px] flex flex-col sm:flex-row justify-between items-center py-2 sm:py-0 gap-2 sm:gap-0">
+            <div className="font-normal text-app-primary text-sm sm:text-base text-center sm:text-left">
               Up to 50% Off Waterproof Floors
             </div>
-            <div className="flex items-center gap-[30px]">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-[30px]">
               <div className="flex items-center gap-[5px]">
                 <PhoneIcon className="w-[19px] h-[19px] text-app-primary" />
-                <span className="font-medium text-app-primary text-sm">
+                <span className="font-medium text-app-primary text-xs sm:text-sm">
                   (+521) 112 123 123
                 </span>
               </div>
               <div className="flex items-center gap-[7px]">
                 <MailIcon className="w-[23px] h-[18px] text-app-primary" />
-                <span className="font-medium text-app-primary text-sm">
+                <span className="font-medium text-app-primary text-xs sm:text-sm">
                   naimurhera@gmail.com
                 </span>
               </div>
@@ -64,37 +64,43 @@ export const Home = (): JSX.Element => {
         </header>
 
         {/* Main navigation */}
-        <nav className="w-full h-[168px]">
+        <nav className="w-full h-auto min-h-[168px]">
           {/* Upper nav with logo and search */}
-          <div className="w-full h-[108px] bg-white">
-            <div className="max-w-[1440px] h-full mx-auto px-[100px] flex justify-between items-center">
-              <div className="w-[402px]">
-                <div className="relative w-[400px]">
-                  <SearchIcon className="absolute w-5 h-5 top-3.5 left-3.5 text-[#a2a2a2]" />
+          <div className="w-full h-auto min-h-[108px] bg-white py-4 md:py-0">
+            <div className="max-w-[1440px] h-full mx-auto px-4 sm:px-6 md:px-12 lg:px-[100px] flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+              {/* Mobile: Logo first */}
+              <div className="order-1 md:order-2">
+                <img
+                  className="w-[60px] h-[56px] sm:w-[70px] sm:h-[65px] md:w-[84px] md:h-[78px]"
+                  alt="Woodcove Flooring Logo"
+                  src="/figmaAssets/image-1.png"
+                />
+              </div>
+
+              {/* Search bar */}
+              <div className="order-2 md:order-1 w-full max-w-[402px] md:w-[402px]">
+                <div className="relative w-full max-w-[400px]">
+                  <SearchIcon className="absolute w-4 h-4 sm:w-5 sm:h-5 top-3 sm:top-3.5 left-3 sm:left-3.5 text-[#a2a2a2]" />
                   <Input
-                    className="pl-11 h-[46px] border-[#e2e2e2] text-[#a2a2a2]"
-                    placeholder="Search for flooring, Hardwood, Vinyl ..."
+                    className="pl-10 sm:pl-11 h-[40px] sm:h-[46px] border-[#e2e2e2] text-[#a2a2a2] text-sm sm:text-base"
+                    placeholder="Search for flooring..."
                   />
                 </div>
               </div>
 
-              <img
-                className="w-[84px] h-[78px]"
-                alt="Woodcove Flooring Logo"
-                src="/figmaAssets/image-1.png"
-              />
-
-              <div className="flex items-center gap-2">
+              {/* Cart */}
+              <div className="order-3 md:order-3 flex items-center gap-2">
                 <div className="relative">
-                  <ShoppingCartIcon className="w-7 h-7 text-app-primary" />
-                  <span className="absolute w-4 h-4 top-0 left-1.5 flex items-center justify-center">
+                  <ShoppingCartIcon className="w-6 h-6 sm:w-7 sm:h-7 text-app-primary" />
+                  <span className="absolute w-3 h-3 sm:w-4 sm:h-4 top-0 left-1 sm:left-1.5 flex items-center justify-center">
                     <img
                       alt="Cart notification"
                       src="/figmaAssets/vector.svg"
+                      className="w-full h-full"
                     />
                   </span>
                 </div>
-                <span className="font-normal text-app-primary text-base">
+                <span className="font-normal text-app-primary text-sm sm:text-base">
                   Cart
                 </span>
               </div>
@@ -102,9 +108,9 @@ export const Home = (): JSX.Element => {
           </div>
 
           {/* Lower nav with menu items */}
-          <div className="w-full h-[60px] bg-app-primary border-b border-[#195c75]">
-            <div className="max-w-[1440px] h-full mx-auto px-[100px] flex justify-between items-center">
-              <div className="flex items-center gap-[25px]">
+          <div className="w-full h-auto min-h-[60px] bg-app-primary border-b border-[#195c75]">
+            <div className="max-w-[1440px] h-full mx-auto px-4 sm:px-6 md:px-12 lg:px-[100px] flex flex-col md:flex-row justify-between items-center py-3 md:py-0 gap-4 md:gap-0">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 md:gap-[25px]">
                 {navItems.map((item, index) => (
                   <div
                     key={`nav-item-${index}`}
@@ -112,12 +118,12 @@ export const Home = (): JSX.Element => {
                       item.active
                         ? "font-medium text-white"
                         : "font-normal text-[#ffffff80]"
-                    } text-lg`}
+                    } text-sm sm:text-base md:text-lg cursor-pointer hover:text-white transition-colors`}
                   >
                     {item.name}
                     {item.hasDropdown && (
                       <img
-                        className="w-[11px] h-2"
+                        className="w-[9px] h-1.5 sm:w-[11px] sm:h-2"
                         alt="Dropdown indicator"
                         src="/figmaAssets/tabler-chevron-up.svg"
                       />
@@ -126,9 +132,9 @@ export const Home = (): JSX.Element => {
                 ))}
               </div>
 
-              <Button className="bg-white text-app-primary font-medium text-base h-[45px] px-5 py-2.5 flex items-center gap-0.5">
+              <Button className="bg-white text-app-primary font-medium text-sm sm:text-base h-[40px] sm:h-[45px] px-3 sm:px-5 py-2 sm:py-2.5 flex items-center gap-0.5 hover:bg-gray-100 transition-colors">
                 Contact us
-                <ArrowUpRightIcon className="w-[26.27px] h-[26.27px]" />
+                <ArrowUpRightIcon className="w-[20px] h-[20px] sm:w-[26.27px] sm:h-[26.27px]" />
               </Button>
             </div>
           </div>

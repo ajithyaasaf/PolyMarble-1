@@ -27,13 +27,13 @@ export const TeamSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-row items-center gap-5 w-full py-12">
+    <section className="flex flex-col sm:flex-row flex-wrap lg:flex-nowrap items-center justify-center gap-4 sm:gap-5 w-full py-8 sm:py-12 px-4 sm:px-6">
       {teamMembers.map((member, index) => (
         <Card
           key={index}
-          className="w-[295px] h-[479px] border-none rounded-none shadow-none"
+          className="w-full max-w-[280px] sm:w-[280px] md:w-[295px] h-auto border-none rounded-none shadow-none"
         >
-          <div className="relative w-full h-[350px]">
+          <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px]">
             <img
               className="w-full h-full object-cover"
               alt={`${member.name} photo`}
@@ -41,12 +41,12 @@ export const TeamSection = (): JSX.Element => {
             />
           </div>
 
-          <CardContent className="flex flex-col items-center justify-center h-[129px] p-0 bg-neutral-50 border border-solid border-[#e7e7e7]">
-            <div className="flex flex-col items-center gap-2.5 py-[25px] px-[69px] w-full">
-              <h3 className="text-app-primary font-bold text-xl text-center tracking-[0] leading-normal [font-family:'Roboto',Helvetica] w-full">
+          <CardContent className="flex flex-col items-center justify-center h-auto min-h-[100px] sm:min-h-[129px] p-0 bg-neutral-50 border border-solid border-[#e7e7e7]">
+            <div className="flex flex-col items-center gap-2 sm:gap-2.5 py-4 sm:py-[25px] px-4 sm:px-8 md:px-[69px] w-full">
+              <h3 className="text-app-primary font-bold text-lg sm:text-xl text-center tracking-[0] leading-normal [font-family:'Roboto',Helvetica] w-full">
                 {member.name}
               </h3>
-              <p className="font-normal text-[#50646c] text-lg text-center tracking-[0] leading-normal [font-family:'Roboto',Helvetica] w-full whitespace-normal">
+              <p className="font-normal text-[#50646c] text-base sm:text-lg text-center tracking-[0] leading-normal [font-family:'Roboto',Helvetica] w-full whitespace-normal">
                 {member.role}
               </p>
             </div>

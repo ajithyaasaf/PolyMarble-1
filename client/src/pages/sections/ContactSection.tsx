@@ -27,14 +27,14 @@ export const ContactSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-between p-12 bg-[#e5eef2]">
-      <div className="flex flex-col lg:flex-row w-full max-w-[1240px] gap-8 items-center justify-between">
-        <div className="flex flex-col w-full lg:w-[505px] items-start justify-center gap-5">
-          <h2 className="font-bold text-app-primary text-5xl font-['Roboto',Helvetica]">
+    <section className="flex flex-col items-center justify-between p-4 sm:p-6 md:p-8 lg:p-12 bg-[#e5eef2]">
+      <div className="flex flex-col lg:flex-row w-full max-w-[1240px] gap-6 sm:gap-8 items-center justify-between">
+        <div className="flex flex-col w-full lg:w-[505px] items-start justify-center gap-4 sm:gap-5 text-center lg:text-left">
+          <h2 className="font-bold text-app-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-['Roboto',Helvetica]">
             Explore Our Hardwood Collections
           </h2>
 
-          <p className="text-[#50646c] text-lg font-['Roboto',Helvetica]">
+          <p className="text-[#50646c] text-base sm:text-lg font-['Roboto',Helvetica] leading-relaxed">
             Browse our wide selection of high-quality hardwood flooring options.
             From classic to contemporary, Woodcove Flooring offers a variety of
             styles, colors, and finishes to suit any décor. Find the perfect
