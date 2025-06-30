@@ -8,6 +8,15 @@ import {
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { AboutUsSection } from "./sections/AboutUsSection";
+import { CollectionsSection } from "./sections/CollectionsSection";
+import { ContactSection } from "./sections/ContactSection";
+import { FeaturesSection } from "./sections/FeaturesSection";
+import { FooterSection } from "./sections/FooterSection";
+import { MainContentSection } from "./sections/MainContentSection";
+import { ServicesSection } from "./sections/ServicesSection";
+import { TeamSection } from "./sections/TeamSection";
+import { TestimonialsSection } from "./sections/TestimonialsSection";
 
 export const Home = (): JSX.Element => {
   // Navigation menu items
@@ -64,7 +73,7 @@ export const Home = (): JSX.Element => {
                   <SearchIcon className="absolute w-5 h-5 top-3.5 left-3.5 text-[#a2a2a2]" />
                   <Input
                     className="pl-11 h-[46px] border-[#e2e2e2] text-[#a2a2a2]"
-                    placeholder="SearchIcon for flooring, Hardwood, Vinyl ..."
+                    placeholder="Search for flooring, Hardwood, Vinyl ..."
                   />
                 </div>
               </div>
@@ -187,30 +196,90 @@ export const Home = (): JSX.Element => {
           </div>
         </section>
 
-        {/* Testimonials section */}
-        <section className="absolute top-[3475px] left-1/2 -translate-x-1/2 flex flex-col items-center justify-center gap-5">
-          <h2 className="text-white text-5xl text-center">
-            <span className="font-normal">What </span>
-            <span className="font-bold">Our Customers</span>
-            <span className="font-normal"> Say</span>
-          </h2>
-          <p className="w-[534px] font-normal text-white text-lg text-center">
-            Don&apos;t just take our word for it. Hear from our satisfied
-            customers who have transformed their spaces with Woodcove Flooring.
-          </p>
+        {/* Contact Section */}
+        <ContactSection />
+
+        {/* Collections Section */}
+        <CollectionsSection />
+
+        {/* Main Content Section */}
+        <MainContentSection />
+
+        {/* Team Section */}
+        <TeamSection />
+
+        {/* Testimonials background section */}
+        <section className="w-full h-[700px] bg-[url(/figmaAssets/rectangle-17.png)] bg-cover bg-center relative">
+          <div className="container mx-auto px-6 h-full flex flex-col items-center">
+            <div className="flex flex-col items-center gap-5 mt-[90px]">
+              <h2 className="text-5xl text-white">
+                <span className="font-normal">What </span>
+                <span className="font-bold">Our Customers</span>
+                <span className="font-normal"> Say</span>
+              </h2>
+
+              <p className="max-w-[534px] text-center text-white text-lg">
+                Don&apos;t just take our word for it. Hear from our satisfied
+                customers who have transformed their spaces with Woodcove
+                Flooring.
+              </p>
+            </div>
+
+            {/* Services Section */}
+            <ServicesSection />
+
+            {/* Pagination dots */}
+            <div className="flex justify-center gap-[10px] mt-auto mb-[120px]">
+              {indicators.map((dot, index) => (
+                <div
+                  key={`testimonial-dot-${index}`}
+                  className={`w-[13px] h-[13px] rounded-full ${
+                    dot.active ? "bg-white" : "border border-white"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </section>
 
-        {/* Testimonial carousel indicators */}
-        <div className="absolute top-[3965px] left-1/2 -translate-x-1/2 flex gap-[10px]">
-          {indicators.map((indicator, index) => (
-            <div
-              key={`testimonial-indicator-${index}`}
-              className={`w-[13px] h-[13px] rounded-full ${
-                indicator.active ? "bg-white" : "border border-white"
-              }`}
+        {/* About Us Section with dark blue background */}
+        <section className="w-full bg-app-primary">
+          <AboutUsSection />
+        </section>
+
+        {/* Footer with Testimonials */}
+        <footer className="w-full bg-neutral-900">
+          <div className="container mx-auto px-6 py-[60px] relative">
+            <img
+              className="w-[84px] h-[78px]"
+              alt="Company logo"
+              src="/figmaAssets/image-1.png"
             />
-          ))}
-        </div>
+
+            <TestimonialsSection />
+
+            <img
+              className="w-full h-[3px] mt-[60px]"
+              alt="Divider line"
+              src="/figmaAssets/line-5.svg"
+            />
+
+            <div className="text-center mt-[22px] font-normal text-[#727272] text-base tracking-[0.08px]">
+              @copyright 2024 all right reserved by{" "}
+              <a
+                href="https://www.figma.com/@naimur1"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="underline"
+              >
+                Naimur Rahman Hira
+              </a>
+            </div>
+          </div>
+        </footer>
+
+        {/* Footer Section */}
+        <FooterSection />
       </div>
     </div>
   );
