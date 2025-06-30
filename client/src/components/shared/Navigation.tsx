@@ -137,8 +137,8 @@ export const Navigation = (): JSX.Element => {
               ))}
             </div>
 
-            {/* Mobile Navigation - Only hamburger menu */}
-            <div className="md:hidden">
+            {/* Mobile Navigation */}
+            <div className="md:hidden w-full flex justify-between items-center">
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon" className="text-white">
@@ -167,18 +167,35 @@ export const Navigation = (): JSX.Element => {
                         </div>
                       </Link>
                     ))}
+                    {/* Contact option in mobile menu */}
+                    <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                      <div
+                        className={`flex items-center gap-2 p-3 rounded ${
+                          isActive("/contact")
+                            ? "bg-white text-app-primary font-medium"
+                            : "text-white hover:bg-[#ffffff20]"
+                        } transition-colors`}
+                      >
+                        Contact
+                      </div>
+                    </Link>
                   </div>
                 </SheetContent>
               </Sheet>
+              
+              {/* Brand name on mobile */}
+              <span className="text-white font-medium text-sm">Woodcove Flooring</span>
             </div>
 
-            {/* Contact button */}
-            <Link href="/contact">
-              <Button className="bg-white text-app-primary font-medium text-sm sm:text-base h-[40px] sm:h-[45px] px-3 sm:px-5 py-2 sm:py-2.5 flex items-center gap-0.5 hover:bg-gray-100 transition-colors">
-                Contact us
-                <ArrowUpRightIcon className="w-[20px] h-[20px] sm:w-[26.27px] sm:h-[26.27px]" />
-              </Button>
-            </Link>
+            {/* Contact button - Desktop only */}
+            <div className="hidden md:block">
+              <Link href="/contact">
+                <Button className="bg-white text-app-primary font-medium text-sm sm:text-base h-[40px] sm:h-[45px] px-3 sm:px-5 py-2 sm:py-2.5 flex items-center gap-0.5 hover:bg-gray-100 transition-colors">
+                  Contact us
+                  <ArrowUpRightIcon className="w-[20px] h-[20px] sm:w-[26.27px] sm:h-[26.27px]" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
