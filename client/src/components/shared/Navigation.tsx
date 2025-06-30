@@ -32,7 +32,6 @@ export const Navigation = (): JSX.Element => {
     { name: "Team", href: "/team", hasDropdown: false },
     { name: "Gallery", href: "/gallery", hasDropdown: false },
     { name: "Testimonials", href: "/testimonials", hasDropdown: false },
-    { name: "Contact", href: "/contact", hasDropdown: false },
   ];
 
   const isActive = (href: string) => {
@@ -138,8 +137,8 @@ export const Navigation = (): JSX.Element => {
               ))}
             </div>
 
-            {/* Mobile Navigation */}
-            <div className="md:hidden w-full flex justify-between items-center">
+            {/* Mobile Navigation - Only hamburger menu */}
+            <div className="md:hidden">
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon" className="text-white">
@@ -171,10 +170,6 @@ export const Navigation = (): JSX.Element => {
                   </div>
                 </SheetContent>
               </Sheet>
-              
-              <div className="text-white font-medium">
-                {navItems.find(item => isActive(item.href))?.name || "Woodcove Flooring"}
-              </div>
             </div>
 
             {/* Contact button */}
