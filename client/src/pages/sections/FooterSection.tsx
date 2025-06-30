@@ -62,13 +62,13 @@ export const FooterSection = (): JSX.Element => {
 
       {/* Bottom navigation bar */}
       <nav className="w-full bg-app-primary border-b border-[#195c75]">
-        <div className="container mx-auto flex items-center justify-between px-4 h-[60px]">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-3 md:py-0 md:h-[60px] gap-4 md:gap-0">
           {/* Navigation links */}
-          <ul className="flex items-center gap-[25px]">
+          <ul className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 md:gap-[25px]">
             {navItems.map((item, index) => (
               <li key={index} className="flex items-center gap-[5px]">
                 <span
-                  className={`font-['Roboto',Helvetica] text-lg ${
+                  className={`font-['Roboto',Helvetica] text-sm sm:text-base md:text-lg ${
                     item.active
                       ? "text-white font-medium"
                       : "text-[#ffffff80] font-normal"
@@ -77,17 +77,17 @@ export const FooterSection = (): JSX.Element => {
                   {item.label}
                 </span>
                 {item.hasDropdown && (
-                  <ChevronUpIcon className="h-2 w-[11px] text-[#ffffff80]" />
+                  <ChevronUpIcon className="h-1.5 sm:h-2 w-[9px] sm:w-[11px] text-[#ffffff80]" />
                 )}
               </li>
             ))}
           </ul>
 
           {/* Contact us button */}
-          <Button className="bg-white text-app-primary font-medium text-base rounded-none px-5 py-2.5 h-auto flex items-center gap-0.5">
+          <Button className="bg-white text-app-primary font-medium text-sm sm:text-base rounded-none px-4 sm:px-5 py-2 sm:py-2.5 h-auto flex items-center gap-0.5">
             Contact us
             <img
-              className="w-[26.27px] h-[26.27px]"
+              className="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] md:w-[26.27px] md:h-[26.27px]"
               alt="Arrow up"
               src="/figmaAssets/ph-arrow-up.svg"
             />

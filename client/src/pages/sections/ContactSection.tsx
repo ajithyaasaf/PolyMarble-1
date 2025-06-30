@@ -47,10 +47,10 @@ export const ContactSection = (): JSX.Element => {
             <CarouselContent>
               {products.map((product) => (
                 <CarouselItem key={product.id} className="md:basis-1/2">
-                  <Card className="w-[296px] h-[342px] border border-solid border-[#e4e4e4] bg-white">
+                  <Card className="w-full max-w-[296px] h-[300px] sm:h-[320px] md:h-[342px] border border-solid border-[#e4e4e4] bg-white mx-auto">
                     <CardContent className="p-0 relative h-full">
                       <img
-                        className="w-[276px] h-[200px] mx-auto mt-[9px] object-cover"
+                        className="w-[calc(100%-20px)] max-w-[276px] h-[180px] sm:h-[190px] md:h-[200px] mx-auto mt-[9px] object-cover"
                         alt={product.title}
                         src={product.image}
                       />

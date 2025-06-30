@@ -59,16 +59,16 @@ export const TestimonialsSection = (): JSX.Element => {
       </div>
 
       {/* Our Services Column */}
-      <div className="flex flex-col w-[179px]">
-        <h3 className="font-['Poppins',Helvetica] font-bold text-[#ffffff] text-[22px] text-center tracking-[0] leading-normal mb-[41px]">
+      <div className="flex flex-col w-full md:w-[179px]">
+        <h3 className="font-['Poppins',Helvetica] font-bold text-[#ffffff] text-lg sm:text-xl md:text-[22px] text-center md:text-left tracking-[0] leading-normal mb-6 sm:mb-8 md:mb-[41px]">
           Our Services
         </h3>
 
-        <ul className="space-y-[34px]">
+        <ul className="space-y-4 sm:space-y-6 md:space-y-[34px]">
           {services.map((service, index) => (
             <li
               key={`service-${index}`}
-              className="font-['Roboto',Helvetica] font-normal text-[#727272] text-base tracking-[0.48px] leading-normal whitespace-nowrap"
+              className="font-['Roboto',Helvetica] font-normal text-[#727272] text-sm sm:text-base tracking-[0.48px] leading-normal text-center md:text-left"
             >
               {service}
             </li>
@@ -77,18 +77,16 @@ export const TestimonialsSection = (): JSX.Element => {
       </div>
 
       {/* Useful Links Column */}
-      <div className="flex flex-col w-[131px]">
-        <h3 className="font-['Poppins',Helvetica] font-bold text-[#ffffff] text-[22px] text-center tracking-[0] leading-normal mb-[41px]">
+      <div className="flex flex-col w-full md:w-[131px]">
+        <h3 className="font-['Poppins',Helvetica] font-bold text-[#ffffff] text-lg sm:text-xl md:text-[22px] text-center md:text-left tracking-[0] leading-normal mb-6 sm:mb-8 md:mb-[41px]">
           Useful links
         </h3>
 
-        <ul className="space-y-[34px]">
+        <ul className="space-y-4 sm:space-y-6 md:space-y-[34px]">
           {usefulLinks.map((link, index) => (
             <li
               key={`link-${index}`}
-              className={`font-['Roboto',Helvetica] font-normal text-[#727272] text-base tracking-[0.48px] leading-normal whitespace-nowrap ${
-                index === usefulLinks.length - 1 ? "mt-[30px]" : ""
-              }`}
+              className="font-['Roboto',Helvetica] font-normal text-[#727272] text-sm sm:text-base tracking-[0.48px] leading-normal text-center md:text-left"
             >
               {link}
             </li>
@@ -97,23 +95,23 @@ export const TestimonialsSection = (): JSX.Element => {
       </div>
 
       {/* Newsletter Column */}
-      <div className="flex flex-col w-[338px]">
-        <h3 className="font-['Poppins',Helvetica] font-bold text-[#ffffff] text-[22px] text-center tracking-[0] leading-normal mb-[42px]">
+      <div className="flex flex-col w-full md:w-[338px]">
+        <h3 className="font-['Poppins',Helvetica] font-bold text-[#ffffff] text-lg sm:text-xl md:text-[22px] text-center md:text-left tracking-[0] leading-normal mb-6 sm:mb-8 md:mb-[42px]">
           Newsletter
         </h3>
 
-        <p className="w-[334px] font-['Poppins',Helvetica] font-normal text-[#727272] text-base tracking-[0.48px] leading-normal mb-[41px]">
+        <p className="w-full max-w-[334px] mx-auto md:mx-0 font-['Poppins',Helvetica] font-normal text-[#727272] text-sm sm:text-base tracking-[0.48px] leading-normal mb-6 sm:mb-8 md:mb-[41px] text-center md:text-left">
           Stay updated on flooring trends and exclusive offers. Subscribe to the
           Woodcove Flooring newsletter!
         </p>
 
-        <div className="flex flex-col gap-[10px]">
+        <div className="flex flex-col gap-2 sm:gap-[10px] w-full max-w-[335px] mx-auto md:mx-0">
           <Input
             placeholder="Your email"
-            className="w-[335px] h-10 bg-neutral-900 border border-solid border-[#346171] font-['Poppins',Helvetica] font-normal text-[#727272] text-sm tracking-[0.42px] leading-normal"
+            className="w-full h-10 bg-neutral-900 border border-solid border-[#346171] font-['Poppins',Helvetica] font-normal text-[#727272] text-sm tracking-[0.42px] leading-normal"
           />
 
-          <Button className="w-[335px] h-10 bg-app-primary font-['Poppins',Helvetica] font-normal text-[#ffffff] text-sm tracking-[0.42px] leading-normal">
+          <Button className="w-full h-10 bg-app-primary font-['Poppins',Helvetica] font-normal text-[#ffffff] text-sm tracking-[0.42px] leading-normal">
             Subscribe
           </Button>
         </div>
