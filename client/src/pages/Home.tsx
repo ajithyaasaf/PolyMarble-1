@@ -12,7 +12,6 @@ import { AboutUsSection } from "./sections/AboutUsSection";
 import { CollectionsSection } from "./sections/CollectionsSection";
 import { ContactSection } from "./sections/ContactSection";
 import { FeaturesSection } from "./sections/FeaturesSection";
-import { FooterSection } from "./sections/FooterSection";
 import { MainContentSection } from "./sections/MainContentSection";
 import { ServicesSection } from "./sections/ServicesSection";
 import { TeamSection } from "./sections/TeamSection";
@@ -284,8 +283,7 @@ export const Home = (): JSX.Element => {
           </div>
         </footer>
 
-        {/* Footer Section */}
-        <FooterSection />
+
       </div>
     </div>
   );
